@@ -10,4 +10,16 @@ public class Deck {
     public int checkDeck() {
         return this.deck.size();
     }
+
+    public void populate() {
+        SuitType[] suits = SuitType.values();
+        RankType[] ranks = RankType.values();
+
+        for (int i = 0; i < suits.length; i++) {
+            for (int j = 0; j < ranks.length; j++) {
+                this.deck.add(new Card(suits[i], ranks[j]));
+            }
+        }
+    }
+
 }

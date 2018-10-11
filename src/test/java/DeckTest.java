@@ -21,4 +21,10 @@ public class DeckTest {
     public void hasEmptyDeck() {
         assertEquals(0, deck.checkDeck());
     }
+
+    @Test
+    public void hasPopulate() {
+        deck.populate();
+        assertEquals(52, deck.checkDeck());
+    }
 }
