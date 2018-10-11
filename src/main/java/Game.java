@@ -9,14 +9,26 @@ public class Game {
         this.player1 = player2;
     }
 
-    public Card checkWin(Card card1, Card card2) {
-        Card winningCard;
+
+
+    public String checkWin(Card card1, Card card2) {
+        String winningCard;
 
         if (card1.getValueFromEnum() > card2.getValueFromEnum()) {
-            winningCard = card1;
+            winningCard = "Player1 wins!";
+        } else if (card1.getValueFromEnum()< card2.getValueFromEnum()){
+            winningCard = "Player2 wins!";
         } else {
-            winningCard = card2;
+            winningCard = "Snap!";
         }
         return winningCard;
+    }
+
+    public void playTurn() {
+        this.deck.populate();
+        this.deck.shuffleDeck();
+        Card card1 = this.deck.dealCard();
+        Card card2 = this.deck.dealCard();
+        checkWin(card1, card2);
     }
 }
