@@ -16,8 +16,13 @@ public class CardTest {
     }
 
     @Test
-    public void canRankType() {
+    public void cangetRank() {
         assertEquals(RankType.ACE, card.getRank());
+    }
+
+    @Test
+    public void cardHasValue() {
+        assertEquals(11, card.getValueFromEnum());
     }
 
 }
